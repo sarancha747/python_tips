@@ -102,7 +102,7 @@
 # #         print(i, ii)
 
 """
-    Timeit
+    Timeit - measure execution time of small code snippets
 """
 # import timeit
 #
@@ -140,3 +140,77 @@
 # xyz = [i for i in input_list if div_by_five(i)]
 # for i in xyz:
 #     x = i''', number=5000))
+"""
+    Enumerate - the function that gives the count of the current iteration 
+and the value of the item at the current iteration
+"""
+# example = ['left', 'right', 'up', 'down']
+#
+# for i in range(len(example)):  # <-- Wrong way
+#     print(i, example[i])
+#
+# for i, j in enumerate(example):  # <-- Right way
+#     print(i, j)
+#
+# new_dict = dict(enumerate(example))
+# print(new_dict)
+# [print(i, j) for i, j in enumerate(new_dict)]
+"""
+Zip
+"""
+# x = [1, 2, 3, 4]
+# y = [7, 6, 2, 1]
+# z = ['a', 'b', 'c', 'd']
+#
+# # for a, b, c in zip(x, y, z):
+# #     print(a, b, z)
+#
+# print(dict(zip(x, y)))  # dictionary creation
+#
+# # [print(a, b) for a, b in zip(x, y)]
+# # print(a)  # <-- 'a' is not defined
+#
+# for a, b in zip(x, y):
+#     print(a, b)
+# print(a)  # <-- last 'a' value is stored (4)
+"""
+More about generators 
+"""
+# def simple_gen():
+#     yield 'Oh'
+#     yield 'hello'
+#     yield 'there'
+#
+#
+# for i in simple_gen():
+#     print(i)
+#
+# CORRECT_COMBO = (3, 6, 1)
+# found_combo = False
+# for c1 in range(10):
+#     if found_combo:
+#         break
+#     for c2 in range(10):
+#         if found_combo:
+#             break
+#         for c3 in range(10):
+#             if (c1, c2, c3) == CORRECT_COMBO:
+#                 print('Found the combo: {}'.format((c1, c2, c3)))
+#                 found_combo = True
+#                 break
+#             print(c1, c2, c3)
+
+
+# def combo_gen():
+#     for c1 in range(10):
+#         for c2 in range(10):
+#             for c3 in range(10):
+#                 yield c1, c2, c3
+#
+#
+# for(c1, c2, c3) in combo_gen():
+#     print(c1, c2, c3)
+#     if (c1, c2, c3) == CORRECT_COMBO:
+#         print('Found the combo: {}'.format((c1, c2, c3)))
+#         break
+#     print(c1, c2, c3)
